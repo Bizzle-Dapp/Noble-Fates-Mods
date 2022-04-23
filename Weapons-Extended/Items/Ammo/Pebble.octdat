@@ -1,0 +1,115 @@
+// Author: Bizzle_Dapp
+// Version: 1.0
+// Description: First Mod
+
+// Pebble Ammo 
+{
+    id FirstMod.Items.Ammo.Pebble
+    type ProjectileStackedItemType
+    inherit Oct.Items.Stackable
+
+    name = Pebble
+	itemClass = StackedItem
+	category = <FirstMod.Items.Categories.Misc.Ammo.Pebble>
+	stackLimit = 25
+    indoorDecayAfter = 70d
+	outdoorDecayAfter = 35d
+	value = 1
+	showCount = true
+	dropSound = CommonDrop
+    projectileType = <FirstMod.Projectiles.Pebble>
+	equipmentSlot = Ammo
+    
+    autonomousPerMember = 25
+	
+	prefab =
+	{
+		type Prefab
+		path = /Art/Projectiles/Pebble.fbx
+		name = Pebble Item
+        behavior = StackedItemBehavior
+	}
+}
+// Projectile
+{
+	id FirstMod.Projectiles.Pebble
+	type ProjectileType
+	
+	name = Pebble
+	injury = Pebble Bump
+    foliageDamageScale = .1
+    
+    attach = false
+	hit =
+	{
+		id FirstMod.Projectiles.Arrow.Hit
+		type AudioHandles
+		audioChances = 
+		[
+			{
+				type AudioHandleChance
+				chance = 1
+				audio =
+				{
+					type AudioClipHandle
+					path = /SFX/Ranged/Bow/arrowHit1.wav
+					globalCooldown = 1
+				}
+			}
+			{
+				type AudioHandleChance
+				chance = 1
+				audio =
+				{
+					type AudioClipHandle
+					path = /SFX/Ranged/Bow/arrowHit2.wav
+					globalCooldown = 1
+				}
+			}
+			{
+				type AudioHandleChance
+				chance = 1
+				audio =
+				{
+					type AudioClipHandle
+					path = /SFX/Ranged/Bow/arrowHit3.wav
+					globalCooldown = 1
+				}
+			}
+		]
+	}
+	
+	prefab =
+	{
+		type Prefab
+		path = /Art/Projectiles/Pebble.fbx
+		name = Pebble
+        behavior = ProjectileBehavior
+	}
+}
+// Recipe
+{
+    id FirstMod.Recipe.Pebble
+    type ItemRecipe
+
+    name = Pebble
+    type = <FirstMod.Items.Ammo.Pebble>
+    commandType = CraftItemCommand
+    craftingLoop = CookingLoop
+    yield = 1
+    batch = 25
+
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+
+    ingredients = 
+    [
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Stone>
+            count = 1
+        }
+    ]
+}

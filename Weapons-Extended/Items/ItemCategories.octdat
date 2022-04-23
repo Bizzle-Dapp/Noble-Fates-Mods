@@ -1,0 +1,16 @@
+{
+	id FirstMod.Items.Categories.Gear.Weapons.Slings
+	type ItemCategory
+	
+	subject = true
+	name = Slingshottas
+    showCount = true
+	parent = <Oct.Items.Categories.Gear.Weapons>
+}
+{
+	id FirstMod.Items.Categories.Misc.Ammo.Pebble
+	type ItemCategory
+	
+	name = Pebble
+	parent = <Oct.Items.Categories.Misc.Ammo>
+}

@@ -1,0 +1,84 @@
+// Author: Bizzle_Dapp
+// Version: 1.0
+// Description: First Mod
+
+// Slingshot
+{
+    id FirstMod.Items.Weapons.Slingshot
+    type RangedWeaponItemType
+    inherit FirstMod.Items.Weapons.Sling
+
+    name = Slingshot
+    pluralName = Slingshottas
+	buffScale = 2
+
+    stats =
+	[
+		{
+			type InstancedItemStat
+			name = Damage
+			formula = QualityHalfDurability
+			min = 2
+			max = 12
+		}
+		{
+			type InstancedItemStat
+			name = Value
+			formula = QualityQualityHalfDurability
+			min = 4
+			max = 20
+		}
+	]
+    equipmentCosmetic = 
+	{
+        type StaticCharacterCosmetic
+        inherit FirstMod.Items.Weapons.Sling.Cosmetic
+		
+		prefab =
+		{
+			type Prefab
+			path = /Art/Weapons/Slingshot.fbx
+			name = Slingshot Cosmetic
+            behavior = StaticCharacterCosmeticBehavior
+		}
+	}
+    cosmeticPrefab = true
+    prefab = 
+    {
+        type Prefab
+        path = /Art/Weapons/Slingshot.fbx
+        name = Slingshot Item
+        behavior = InstancedItemBehavior
+    }
+}
+// Recipe
+{
+    id FirstMod.Recipe.Slingshot
+    type ItemRecipe
+
+    name = Slingshot
+    type = <FirstMod.Items.Weapons.Slingshot>
+    commandType = CraftItemCommand
+    craftingLoop = CookingLoop
+    yield = 1
+    batch = 1
+
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+
+    ingredients = 
+    [
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Wood>
+            count = 2
+        }
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Cotton>
+            count = 2
+        }
+    ]
+}
