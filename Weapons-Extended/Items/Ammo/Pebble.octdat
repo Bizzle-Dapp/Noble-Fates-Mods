@@ -96,8 +96,8 @@
     type = <FirstMod.Items.Ammo.Pebble>
     commandType = CraftItemCommand
     craftingLoop = CookingLoop
-    yield = 1
-    batch = 25
+    yield = 25
+    batch = 1
 
     craftAt = 
     [
