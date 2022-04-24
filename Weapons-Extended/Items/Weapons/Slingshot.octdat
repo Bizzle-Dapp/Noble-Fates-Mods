@@ -1,10 +1,10 @@
 // Author: Bizzle_Dapp
 // Version: 1.0
-// Description: First Mod
+// Description: WeaponsExtended
 // Cosmetic
 {
     abstract 
-    id FirstMod.Items.Weapons.Sling.Cosmetic
+    id WeaponsExtended.Items.Weapons.Sling.Cosmetic
     type StaticCharacterCosmetic
     
     boneTransforms =
@@ -29,7 +29,7 @@
 }
 // Slingshot
 {
-    id FirstMod.Items.Weapons.Slingshot
+    id WeaponsExtended.Items.Weapons.Slingshot
     type RangedWeaponItemType
     inherit Oct.Items.Buffable
 
@@ -37,13 +37,13 @@
     pluralName = Slingshottas
 	buffScale = 2
     itemClass = InstancedItem
-	category = <FirstMod.Items.Categories.Gear.Weapons.Slings>
+	category = <WeaponsExtended.Items.Categories.Gear.Weapons.Slings>
 	isMelee = false
-	ammoType = <FirstMod.Items.Ammo.Pebble>
+	ammoType = <WeaponsExtended.Items.Ammo.Pebble>
 	cosmeticPrefab = true
 	equipmentSlot = Secondary
     
-    ammoFilter = <FirstMod.Items.Categories.Misc.Ammo.Pebble>
+    ammoFilter = <WeaponsExtended.Items.Categories.Misc.Ammo.Pebble>
     drawnBone = LeftHandSlot
 
     stats =
@@ -66,7 +66,7 @@
     equipmentCosmetic = 
 	{
         type StaticCharacterCosmetic
-        inherit FirstMod.Items.Weapons.Sling.Cosmetic
+        inherit WeaponsExtended.Items.Weapons.Sling.Cosmetic
 		
 		prefab =
 		{
@@ -86,11 +86,11 @@
 }
 // Recipe
 {
-    id FirstMod.Recipe.Slingshot
+    id WeaponsExtended.Recipe.Slingshot
     type ItemRecipe
 
     name = Slingshot
-    type = <FirstMod.Items.Weapons.Slingshot>
+    type = <WeaponsExtended.Items.Weapons.Slingshot>
     commandType = CraftItemCommand
     craftingLoop = CookingLoop
     yield = 1

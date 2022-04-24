@@ -1,5 +1,5 @@
 {
-	id FirstMod.Items.Categories.Gear.Weapons.Slings
+	id WeaponsExtended.Items.Categories.Gear.Weapons.Slings
 	type ItemCategory
 	
 	subject = true
@@ -8,7 +8,7 @@
 	parent = <Oct.Items.Categories.Gear.Weapons>
 }
 {
-	id FirstMod.Items.Categories.Misc.Ammo.Pebble
+	id WeaponsExtended.Items.Categories.Misc.Ammo.Pebble
 	type ItemCategory
 	
 	name = Pebbles
