@@ -5,17 +5,16 @@
 {
 	id WeaponsExtended.Items.Weapons.WoodenSword
 	type WeaponItemType
-	inherit Oct.Items.Weapons.Sword
+	inherit Oct.Items.Buffable
 	
 	name = Wooden Sword
     pluralName = Wooden Swords
-    
+    indoorDecayAfter = 92y
+	outdoorDecayAfter = 44y
 	buffScale = 2
-    
-    substances = 
-    [
-        <Oct.Items.Substances.Wood>
-    ]
+    itemClass = InstancedItem
+	category = <Oct.Items.Categories.Gear.Weapons.Swords>
+	isMelee = true
     
 	stats =
 	[
@@ -35,6 +34,54 @@
 		}
 	]	
 	
+	equipmentSlot = Primary
+	equipmentCosmetic = 
+	{
+		type StaticCharacterCosmetic
+
+		prefab =
+		{
+			type Prefab
+			path = /Art/Items/Weapons/Sword/Sword.fbx
+			name = Wooden Sword
+            behavior = StaticCharacterCosmeticBehavior
+
+        	sharedMaterials = 
+        	[
+            	{
+                	type OctDatSharedMaterial
+                	names = 
+                	[
+                    	Blade
+						Hilt
+						Handle
+                	]
+                	material = 
+					{
+						type material
+						inherit Oct.Items.Materials.Wood
+
+						_Color = color(#954535)
+					}
+            	}
+        	]
+		}
+
+		boneTransforms =
+		[
+			{
+				type StaticCharacterCosmeticTransform
+				bone = Back1
+				rotation = rotation(0, 90, 0)
+			}
+			{
+				type StaticCharacterCosmeticTransform
+				bone = Back2
+				rotation = rotation(0, 90, 0)
+			}
+		]
+	}
+	
 	cosmeticPrefab = true
 	prefab =
 	{
@@ -42,15 +89,24 @@
 		path = /Art/Items/Weapons/Sword/Sword.fbx
 		name = Sword Item
         behavior = InstancedItemBehavior
-		materials = 
+
+		sharedMaterials = 
         [
-            ?(name == Blade) {
-                type Material
-                _Color = color(.57647, .57647, .27843)
-            }
-            ?(name == Hilt) {
-                type Material
-                _Color = color(.57647, .57647, .27843)
+            {
+                type OctDatSharedMaterial
+                names = 
+                [
+                    Blade
+					Hilt
+					Handle
+                ]
+                material = 
+				{
+					type material
+					inherit Oct.Items.Materials.Wood
+
+					_Color = color(#954535)
+				}
             }
         ]
 	}
@@ -61,11 +117,20 @@
 		path = /Art/Items/Weapons/Sword/SwordBlank.fbx
 		name = Sword Blank
         behavior = InstancedItemBehavior
-		materials = 
+
+		sharedMaterials = 
         [
-            ?(name == Blade) {
-                type Material
-                _Color = color(.57647, .57647, .27843)
+            {
+				type OctDatSharedMaterial
+				names = 
+				[
+					Blade
+				]
+                material = 
+				{
+					type material
+					_Color = color(.57647, .57647, .27843)
+				}
             }
         ]
     }
