@@ -1,0 +1,108 @@
+// Author: Bizzle_Dapp
+// Version: 1.1
+// Description: WeaponsExtended
+// Wooden Sword
+{
+	id WeaponsExtended.Items.Weapons.WoodenSword
+	type WeaponItemType
+	inherit Oct.Items.Weapons.Sword
+	
+	name = Wooden Sword
+    pluralName = Wooden Swords
+    
+	buffScale = 2
+    
+    substances = 
+    [
+        <Oct.Items.Substances.Wood>
+    ]
+    
+	stats =
+	[
+		{
+			type InstancedItemStat
+			name = Damage
+			formula = QualityHalfDurability
+			min = 2
+			max = 8
+		}
+		{
+			type InstancedItemStat
+			name = Value
+			formula = QualityQualityHalfDurability
+			min = 2
+			max = 24
+		}
+	]	
+	
+	cosmeticPrefab = true
+	prefab =
+	{
+		type Prefab
+		path = /Art/Items/Weapons/Sword/Sword.fbx
+		name = Sword Item
+        behavior = InstancedItemBehavior
+		materials = 
+        [
+            ?(name == Blade) {
+                type Material
+                _Color = color(.57647, .57647, .27843)
+            }
+            ?(name == Hilt) {
+                type Material
+                _Color = color(.57647, .57647, .27843)
+            }
+        ]
+	}
+    
+    partialPrefab =
+    {
+        type Prefab
+		path = /Art/Items/Weapons/Sword/SwordBlank.fbx
+		name = Sword Blank
+        behavior = InstancedItemBehavior
+		materials = 
+        [
+            ?(name == Blade) {
+                type Material
+                _Color = color(.57647, .57647, .27843)
+            }
+        ]
+    }
+	
+	salvageAt = <Oct.Props.CraftingTable>
+	salvage =
+	[
+		{
+			type ExplicitItemSalvageComponent
+			itemType = <Oct.Items.Stackable.Wood>
+			count = 6
+		}
+	]
+}
+// Recipe
+{
+	id WeaponsExtended.Recipes.Sword.Wooden
+	type ItemRecipe
+	
+	type = <WeaponsExtended.Items.Weapons.WoodenSword>
+	commandType = CraftItemCommand
+	progressMultiplier = .3
+	craftingLoop = WoodCraftingLoop
+	qualityDifficulty = .925
+    skillCurve = .65
+    
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+	
+	ingredients =
+	[
+		{
+			type ItemRecipeIngredient
+			filter = <Oct.Items.Stackable.Wood>
+			count = 8
+		}
+	]
+}
