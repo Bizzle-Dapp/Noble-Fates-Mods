@@ -1,0 +1,104 @@
+// Author: Bizzle_Dapp
+// Version: 1.1
+// Description: WeaponsExtended
+
+// Stone Knife
+{
+	id WeaponsExtended.Items.Weapons.StoneKnife
+	type WeaponItemType
+	inherit Oct.Items.Buffable
+    
+    name = Stone Knife
+    pluralName = Stone Knives
+    buffScale = 1
+	itemClass = InstancedItem
+	category = <WeaponsExtended.Items.Categories.Gear.Weapons.Knives>
+	isMelee = true
+    indoorDecayAfter = 27y
+	outdoorDecayAfter = 9y
+
+    cosmeticPrefab = true
+	
+    equipmentSlot = Primary
+	equipmentCosmetic = 
+	{
+		type StaticCharacterCosmetic
+
+		prefab =
+		{
+			type Prefab
+			path = /Art/Weapons/Stone_Knife.fbx
+			name = Stone Knife
+            behavior = StaticCharacterCosmeticBehavior
+        }
+    }
+	
+    autonomousPerMember = 1
+    
+	stats =
+	[
+		{
+			type InstancedItemStat
+			name = Damage
+			formula = QualityHalfDurability
+			min = 1
+			max = 6
+		}
+		{
+			type InstancedItemStat
+			name = Value
+			formula = QualityQualityHalfDurability
+			min = 2
+			max = 12
+		}
+	]	
+    
+	prefab =
+	{
+		type Prefab
+		path = /Art/Weapons/Stone_Knife.fbx
+		name = Stone Knife Item
+        behavior = InstancedItemBehavior
+	}
+		
+	salvageAt = <Oct.Props.CraftingTable>
+	salvage =
+	[
+		{
+			type ExplicitItemSalvageComponent
+			itemType = <Oct.Items.Stackable.Stone>
+			count = 1
+		}
+	]
+}
+// Recipe
+{
+    id WeaponsExtended.Recipe.StoneKnife
+    type ItemRecipe
+
+    name = Stone Knife
+    type = <WeaponsExtended.Items.Weapons.StoneKnife>
+    commandType = CraftItemCommand
+    craftingLoop = CookingLoop
+    yield = 1
+    batch = 1
+
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+
+    ingredients = 
+    [
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Wood>
+            count = 1
+        }
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Stone>
+            count = 1
+        }
+    ]
+}

@@ -8,6 +8,24 @@
 	parent = <Oct.Items.Categories.Gear.Weapons>
 }
 {
+	id WeaponsExtended.Items.Categories.Gear.Weapons.Knives
+	type ItemCategory
+	
+	subject = true
+	name = Cutters n' Knives
+    showCount = true
+	parent = <Oct.Items.Categories.Gear.Weapons>
+}
+{
+	id WeaponsExtended.Items.Categories.Gear.Weapons.Spears
+	type ItemCategory
+	
+	subject = true
+	name = Spears
+    showCount = true
+	parent = <Oct.Items.Categories.Gear.Weapons>
+}
+{
 	id WeaponsExtended.Items.Categories.Misc.Ammo.Pebble
 	type ItemCategory
 	

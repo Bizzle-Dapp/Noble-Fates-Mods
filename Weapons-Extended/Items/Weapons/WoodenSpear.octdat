@@ -1,0 +1,99 @@
+// Author: Bizzle_Dapp
+// Version: 1.1
+// Description: WeaponsExtended
+
+// Wooden Spear
+{
+	id WeaponsExtended.Items.Weapons.WoodenSpear
+	type WeaponItemType
+	inherit Oct.Items.Buffable
+    
+    name = Wooden Spear
+    pluralName = Stone Knives
+    buffScale = 1
+	itemClass = InstancedItem
+	category = <WeaponsExtended.Items.Categories.Gear.Weapons.Spears>
+	isMelee = true
+    indoorDecayAfter = 27y
+	outdoorDecayAfter = 9y
+
+    cosmeticPrefab = true
+	
+    equipmentSlot = Primary
+	equipmentCosmetic = 
+	{
+		type StaticCharacterCosmetic
+
+		prefab =
+		{
+			type Prefab
+			path = /Art/Weapons/Stick_Spear.fbx
+			name = Wooden Spear
+            behavior = StaticCharacterCosmeticBehavior
+        }
+    }
+	
+    autonomousPerMember = 1
+    
+	stats =
+	[
+		{
+			type InstancedItemStat
+			name = Damage
+			formula = QualityHalfDurability
+			min = 3
+			max = 4
+		}
+		{
+			type InstancedItemStat
+			name = Value
+			formula = QualityQualityHalfDurability
+			min = 6
+			max = 8
+		}
+	]	
+    
+	prefab =
+	{
+		type Prefab
+		path = /Art/Weapons/Stick_Spear.fbx
+        name = Wooden Spear Item
+        behavior = InstancedItemBehavior
+	}
+		
+	salvageAt = <Oct.Props.CraftingTable>
+	salvage =
+	[
+		{
+			type ExplicitItemSalvageComponent
+			itemType = <Oct.Items.Stackable.Wood>
+			count = 1
+		}
+	]
+}
+// Recipe
+{
+    id WeaponsExtended.Recipe.StoneKnife
+    type ItemRecipe
+
+    name = Wooden Spear
+    type = <WeaponsExtended.Items.Weapons.WoodenSpear>
+    commandType = CraftItemCommand
+    craftingLoop = CookingLoop
+    yield = 1
+    batch = 1
+
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+
+    ingredients = 
+    [
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Wood>
+            count = 3
+        }
+    ]
+}
