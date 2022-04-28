@@ -13,16 +13,17 @@ Early game hunting weaponry
 
 [img]https://raw.githubusercontent.com/Bizzle-Dapp/Noble-Fates-Mods/master/Weapons-Extended/PoeyReview.png[/img]
 
-Basic Primitive Sword:
+Basic Primitive Weapons:
 - Wooden Sword
+- Stone Knife
+- Wooden Spear
 
 [img]https://raw.githubusercontent.com/Bizzle-Dapp/Noble-Fates-Mods/master/Weapons-Extended/WoodenSwordPreview.png[/img]
 
 Coming next:
-Expanded weaponry choice for early game
-- Stone Knife
-- Stick Spear
-- Stone Duster
+
+[img]https://raw.githubusercontent.com/Bizzle-Dapp/Noble-Fates-Mods/master/Weapons-Extended/Moar.png[/img]
+
 
 Think about it, if you needed to punch someone in a primitive environment. You'd make it count by clubbing them with a rock, right?
 
