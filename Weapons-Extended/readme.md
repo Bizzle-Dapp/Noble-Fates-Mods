@@ -17,6 +17,7 @@ Basic Primitive Weapons:
 - Wooden Sword
 - Stone Knife
 - Wooden Spear
+- Stone Spear
 
 [img]https://raw.githubusercontent.com/Bizzle-Dapp/Noble-Fates-Mods/master/Weapons-Extended/WoodenSwordPreview.png[/img]
 
@@ -26,3 +27,4 @@ Coming next:
 
 
 The source code for this mod can be found here: [url=https://github.com/Bizzle-Dapp/Noble-Fates-Mods]here[/url]
+

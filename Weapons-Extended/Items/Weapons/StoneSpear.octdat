@@ -2,14 +2,14 @@
 // Version: 1.1
 // Description: WeaponsExtended
 
-// Wooden Spear
+// Stone Spear
 {
-	id WeaponsExtended.Items.Weapons.WoodenSpear
+	id WeaponsExtended.Items.Weapons.StoneSpear
 	type WeaponItemType
 	inherit Oct.Items.Buffable
     
-    name = Wooden Spear
-    pluralName = Wooden Spears
+    name = Stone Spear
+    pluralName = Stone Spears
     buffScale = 1
 	itemClass = InstancedItem
 	category = <WeaponsExtended.Items.Categories.Gear.Weapons.Spears>
@@ -27,8 +27,8 @@
 		prefab =
 		{
 			type Prefab
-			path = /Art/Weapons/Stick_Spear.fbx
-			name = Wooden Spear
+			path = /Art/Weapons/Stone_Spear.fbx
+			name = Stone Spear
             behavior = StaticCharacterCosmeticBehavior
         }
     }
@@ -41,23 +41,23 @@
 			type InstancedItemStat
 			name = Damage
 			formula = QualityHalfDurability
-			min = 3
-			max = 4
+			min = 5
+			max = 7
 		}
 		{
 			type InstancedItemStat
 			name = Value
 			formula = QualityQualityHalfDurability
-			min = 6
-			max = 8
+			min = 7
+			max = 12
 		}
 	]	
     
 	prefab =
 	{
 		type Prefab
-		path = /Art/Weapons/Stick_Spear.fbx
-        name = Wooden Spear Item
+		path = /Art/Weapons/Stone_Spear.fbx
+        name = Stone Spear Item
         behavior = InstancedItemBehavior
 	}
 		
@@ -73,11 +73,11 @@
 }
 // Recipe
 {
-    id WeaponsExtended.Recipe.WoodenSpear
+    id WeaponsExtended.Recipe.StoneSpear
     type ItemRecipe
 
-    name = Wooden Spear
-    type = <WeaponsExtended.Items.Weapons.WoodenSpear>
+    name = Stone Spear
+    type = <WeaponsExtended.Items.Weapons.StoneSpear>
     commandType = CraftItemCommand
     craftingLoop = CookingLoop
     yield = 1
@@ -93,7 +93,17 @@
         {
             type ItemRecipeIngredient
             filter = <Oct.Items.Stackable.Wood>
+            count = 2
+        }
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Stone>
             count = 3
+        }
+		{
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Cotton>
+            count = 2
         }
     ]
 }
