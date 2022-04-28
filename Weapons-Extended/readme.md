@@ -25,6 +25,4 @@ Coming next:
 [img]https://raw.githubusercontent.com/Bizzle-Dapp/Noble-Fates-Mods/master/Weapons-Extended/Moar.png[/img]
 
 
-Think about it, if you needed to punch someone in a primitive environment. You'd make it count by clubbing them with a rock, right?
-
 The source code for this mod can be found here: [url=https://github.com/Bizzle-Dapp/Noble-Fates-Mods]here[/url]
